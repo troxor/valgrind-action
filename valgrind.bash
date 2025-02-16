@@ -20,6 +20,7 @@ prepare_valgrind_flags() {
         echo "${INPUT_VALGRIND_SUPPRESSIONS}" > "${SUPPRESSIONS_FILE}"
         echo "--suppressions=${SUPPRESSIONS_FILE}"
     fi
+    [[ "${INPUT_XML_OUTPUT_FILE}" != "" ]] && echo "--xml=yes --xml-file=${INPUT_XML_OUTPUT_FILE}"
 }
 
 skip_criterion_pipe_leaks() {

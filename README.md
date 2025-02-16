@@ -107,4 +107,11 @@ check the [`4.2. Explanation of error messages from Memcheck`](https://valgrind.
         #
         # Default: 0s
         timeout: 0s
+
+        # Enable Valgrind XML output to a file for later processing. Setting
+        # this to any value but an empty string (the default) will write results
+        # to that path.
+        #
+        # Default: ""
+        xml_output_file: ""
 ```
