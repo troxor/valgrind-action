@@ -14,7 +14,7 @@ prepare_valgrind_flags() {
     echo "--expensive-definedness-checks=yes"
     echo "--gen-suppressions=all"
     echo "--redzone-size=${INPUT_REDZONE_SIZE}"
-    [[ "${INPUT_TRACK_FILE_DESCRIPTORS}" == "true" ]] && echo "--track-fds=yes"
+    [[ "${INPUT_TRACK_FILE_DESCRIPTORS}" == "true" && "${INPUT_XML_OUTPUT_FILE}" == "" ]] && echo "--track-fds=yes"
     [[ "${INPUT_VERBOSE}" == "true" ]] && echo "--verbose"
     if [[ "${INPUT_VALGRIND_SUPPRESSIONS}" != "" ]]; then
         echo "${INPUT_VALGRIND_SUPPRESSIONS}" > "${SUPPRESSIONS_FILE}"
